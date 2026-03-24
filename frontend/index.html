@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NeuroSync AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2>🧠 NeuroSync</h2>
+  <div>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('auth')">Login</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="section">
+  <div class="container">
+    <h1>NeuroSync AI</h1>
+
+    <div class="emojis">
+      <span onclick="setMood('I feel happy 😊')">😊</span>
+      <span onclick="setMood('I feel sad 😢')">😢</span>
+      <span onclick="setMood('I feel angry 😡')">😡</span>
+      <span onclick="setMood('I feel tired 😴')">😴</span>
+    </div>
+
+    <textarea id="input" placeholder="How are you feeling?"></textarea>
+
+    <button onclick="startVoice()">🎤 Speak</button>
+    <button onclick="analyze()">Analyze</button>
+
+    <div id="loader" style="display:none;">⏳ Loading...</div>
+    <div id="result"></div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section" style="display:none;">
+  <div class="container">
+    <h2>📊 Dashboard</h2>
+    <canvas id="chart"></canvas>
+  </div>
+</div>
+
+<!-- AUTH -->
+<div id="auth" class="section" style="display:none;">
+  <div class="container">
+    <h2>🔐 Login / Signup</h2>
+    <input id="email" placeholder="Email">
+    <br><br>
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="signup()">Signup</button><br><br>
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
